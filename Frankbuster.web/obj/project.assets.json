@@ -7123,9 +7123,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\gusta\\Desktop\\Nueva carpeta (2)\\ASP.net-TP\\BlockBuster.manager\\Frankbuster.manager.csproj": {
-              "projectPath": "C:\\Users\\gusta\\Desktop\\Nueva carpeta (2)\\ASP.net-TP\\BlockBuster.manager\\Frankbuster.manager.csproj"
-            },
             "C:\\Users\\gusta\\Desktop\\Nueva carpeta (2)\\ASP.net-TP\\Frankbuster.manager\\Frankbuster.manager.csproj": {
               "projectPath": "C:\\Users\\gusta\\Desktop\\Nueva carpeta (2)\\ASP.net-TP\\Frankbuster.manager\\Frankbuster.manager.csproj"
             }
