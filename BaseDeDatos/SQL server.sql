@@ -17,6 +17,13 @@ CREATE TABLE usuario (
     FOREIGN KEY (identificacion_id) REFERENCES identificacion(identificacion_id)
 );
 
+CREATE TABLE peliculas (
+    pelicula_id INT PRIMARY KEY IDENTITY(1,1), /*Creacion de tabla peliculas*/
+    titulo VARCHAR(255) NOT NULL,
+    descripcion TEXT NOT NULL,
+    fecha_estreno DATE NOT NULL
+);
+
 CREATE TABLE roles (
     rol_id INT PRIMARY KEY IDENTITY(1,1),
     nombre_rol VARCHAR(255) NOT NULL
