@@ -1,0 +1,39 @@
+﻿@model Blockbuster.web.Models.IdentificacionVM
+
+@{
+    ViewData["Title"] = "Iniciar Sesión";
+}
+
+<h1>Iniciar Sesión</h1><br />
+
+<form asp-action="Login" method="Post">
+    <div>
+        <label>Email:</label>
+        <input type="text" asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div>
+        <label>Contraseña:</label>
+        <input type="password" asp-for="ContraHash" />
+        <span asp-validation-for="ContraHash" class="text-danger"></span>
+    </div>
+    <div>
+        <input type="submit" value="Iniciar Sesión" class="btn btn-primary" />
+    </div>
+    <div>
+        <span asp-validation-summary="All" class="text-danger"></span>
+    </div>
+</form>
+<br />
+<a asp-action="Index" asp-controller="Home">Volver a la página principal</a>
+
+<script>
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <text>
+            alert('@TempData["ErrorMessage"]');
+        </text>
+    }
+</script>
+
+
