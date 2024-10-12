@@ -1,0 +1,110 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C80582FF-3814-4EC9-84CA-D2A0105DEC7A}|Frankbuster.manager\\Frankbuster.manager.csproj|c:\\users\\gusta\\desktop\\repositorios\\asp.net\\programaci-n-iv---caba-2c-2024-tp\\frankbuster.manager\\repositorios\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C80582FF-3814-4EC9-84CA-D2A0105DEC7A}|Frankbuster.manager\\Frankbuster.manager.csproj|solutionrelative:frankbuster.manager\\repositorios\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A974518-D55B-4B92-AB94-AB01393EC5BE}|Frankbuster.web\\Frankbuster.web.csproj|c:\\users\\gusta\\desktop\\repositorios\\asp.net\\programaci-n-iv---caba-2c-2024-tp\\frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4A974518-D55B-4B92-AB94-AB01393EC5BE}|Frankbuster.web\\Frankbuster.web.csproj|solutionrelative:frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A974518-D55B-4B92-AB94-AB01393EC5BE}|Frankbuster.web\\Frankbuster.web.csproj|C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{4A974518-D55B-4B92-AB94-AB01393EC5BE}|Frankbuster.web\\Frankbuster.web.csproj|solutionrelative:frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C80582FF-3814-4EC9-84CA-D2A0105DEC7A}|Frankbuster.manager\\Frankbuster.manager.csproj|C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Manager\\UsuarioManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C80582FF-3814-4EC9-84CA-D2A0105DEC7A}|Frankbuster.manager\\Frankbuster.manager.csproj|solutionrelative:Frankbuster.manager\\Manager\\UsuarioManager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C80582FF-3814-4EC9-84CA-D2A0105DEC7A}|Frankbuster.manager\\Frankbuster.manager.csproj|C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\frankbuster.manager\\manager\\identificacionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C80582FF-3814-4EC9-84CA-D2A0105DEC7A}|Frankbuster.manager\\Frankbuster.manager.csproj|solutionrelative:frankbuster.manager\\manager\\identificacionmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsuarioRepository.cs",
+              "DocumentMoniker": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Repositorios\\UsuarioRepository.cs",
+              "RelativeDocumentMoniker": "Frankbuster.manager\\Repositorios\\UsuarioRepository.cs",
+              "ToolTip": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Repositorios\\UsuarioRepository.cs",
+              "RelativeToolTip": "Frankbuster.manager\\Repositorios\\UsuarioRepository.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAewBYAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T03:10:41.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "jquery.min.js",
+              "DocumentMoniker": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+              "RelativeDocumentMoniker": "Frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+              "ToolTip": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+              "RelativeToolTip": "Frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAAAEAAAB8NwEA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-12T03:03:55.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "jquery.js",
+              "DocumentMoniker": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "RelativeDocumentMoniker": "Frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "ToolTip": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "RelativeToolTip": "Frankbuster.web\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "ViewState": "AQIAABQmAAAAAAAAAAAawCMmAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-12T03:03:50.407Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsuarioManager.cs",
+              "DocumentMoniker": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Manager\\UsuarioManager.cs",
+              "RelativeDocumentMoniker": "Frankbuster.manager\\Manager\\UsuarioManager.cs",
+              "ToolTip": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Manager\\UsuarioManager.cs",
+              "RelativeToolTip": "Frankbuster.manager\\Manager\\UsuarioManager.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:51:14.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "IdentificacionManager.cs",
+              "DocumentMoniker": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Manager\\IdentificacionManager.cs",
+              "RelativeDocumentMoniker": "Frankbuster.manager\\Manager\\IdentificacionManager.cs",
+              "ToolTip": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Manager\\IdentificacionManager.cs",
+              "RelativeToolTip": "Frankbuster.manager\\Manager\\IdentificacionManager.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T02:50:57.766Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
