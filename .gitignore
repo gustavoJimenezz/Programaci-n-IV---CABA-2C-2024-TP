@@ -1,1 +1,5 @@
-./vs
+# Ignorar los directorios obj
+**/obj/
+# Ignorar archivos de configuración de Visual Studio
+.vs/
+
