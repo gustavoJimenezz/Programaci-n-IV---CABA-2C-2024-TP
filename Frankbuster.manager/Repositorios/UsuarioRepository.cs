@@ -1,4 +1,5 @@
 ﻿using BlockBuster.manager.Entidades;
+using BlockBuster.manager.ModelFactories;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace BlockBuster.manager.Repositorios
         Usuario GetUsuario(int IdUsuario);
 
         IEnumerable<Usuario> GetUsuarios(bool? SoloActivos = true);
-   //     IEnumerable<UsuarioCompleto> GetUsuariosCompleto();
+        IEnumerable<UsuarioCompleto> GetUsuariosCompleto();
         int CrearUsuario(Usuario usuario);
         bool ModificarUsuario(int IdUsuario, Usuario usuario);
         bool EliminarUsuario(int IdUsuario);
@@ -81,18 +82,27 @@ namespace BlockBuster.manager.Repositorios
         /// <summary>
         /// Obtiene una lista completa de los usuarios
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Lista completa de usuarios</returns>
         /// 
-        ///public IEnumerable<UsuarioCompleto> GetUsuarioCompletos()
-        ///{
+        public IEnumerable<UsuarioCompleto> GetUsuarioCompletos()
+        {
 
-        ///       using (IDbConnection conn = new SqlConnection(_connectionString))
-        ///    {
-        ///        IEnumerable <Usuario> results = 
-                    
+            using (IDbConnection conn = new SqlConnection(_connectionString))
+            {
+
+                string query = @"SELECT Usuario-*,
+
+                                  ";
 
 
-        ///    }
+
+                IEnumerable<UsuarioCompleto> results = conn.Query<UsuarioCompleto>(query);
+
+                return results;
+
+             }
+
+        }
 
 
   
@@ -178,13 +188,15 @@ namespace BlockBuster.manager.Repositorios
             }
         }
 
+        public IEnumerable<UsuarioCompleto> GetUsuariosCompleto()
+        {
+            throw new NotImplementedException();
+        }
 
-
-
-
-
-
-
+        public bool EliminarUsuario(int IdUsuario, int IdUsuarioBaja)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }
