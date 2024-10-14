@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jXhrMdo0ZGN80gv4whFLTf+5E+qI7ukPup1EsDoakesDvQXveSs+DssaQuNhz8hn1jObWzN3UE/pqZA+Pgg2Eg==",
+  "dgSpecHash": "3bYdZlxZnA2WimoZv/E9fmSCIIeT70ORn3MmR4LgobHgFhUpzuqeU/RAUWZlK///3FyHIJ5d1fjsraL3Gqe7qg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
+  "projectFilePath": "C:\\Users\\gusta\\Desktop\\asp-net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gusta\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

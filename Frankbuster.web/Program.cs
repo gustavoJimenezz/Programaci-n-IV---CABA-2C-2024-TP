@@ -1,13 +1,18 @@
 using BlockBuster.manager.Conexion;
 using BlockBuster.manager.Manager;
+using BlockBuster.manager.Repositorios;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("ConexionDefault");
+
+//HAY QUE BORRAR, ConexionDB YA QUE SE HACE LA CONEXION EN REPOSITORIOS
 ConexionDB miConexion = new ConexionDB(connectionString);
 
 builder.Services.AddControllersWithViews();
-builder.Services.AddScoped<UsuarioManager>(provider => new UsuarioManager(miConexion));
+builder.Services.AddScoped<IUsuarioRepository>(provider => new UsuarioRepository(connectionString));
+
+
 builder.Services.AddScoped<IdentificacionManager>(provider => new IdentificacionManager(miConexion));
 
 var app = builder.Build();

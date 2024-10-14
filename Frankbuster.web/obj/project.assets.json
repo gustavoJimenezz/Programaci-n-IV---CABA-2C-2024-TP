@@ -7102,11 +7102,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
+      "projectUniqueName": "C:\\Users\\gusta\\Desktop\\asp-net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
       "projectName": "Frankbuster.web",
-      "projectPath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
+      "projectPath": "C:\\Users\\gusta\\Desktop\\asp-net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
       "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\obj\\",
+      "outputPath": "C:\\Users\\gusta\\Desktop\\asp-net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7123,8 +7123,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Frankbuster.manager.csproj": {
-              "projectPath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Frankbuster.manager.csproj"
+            "C:\\Users\\gusta\\Desktop\\asp-net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Frankbuster.manager.csproj": {
+              "projectPath": "C:\\Users\\gusta\\Desktop\\asp-net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Frankbuster.manager.csproj"
             }
           }
         }

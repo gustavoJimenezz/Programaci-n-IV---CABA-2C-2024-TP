@@ -17,7 +17,7 @@ namespace Blockbuster.web.Controllers
         // GET: UsuarioController
         public ActionResult Index()
         {
-            var usuarios = _usuarioManager.ObtenerUsuarios();
+            var usuarios = _usuarioManager.GetUsuarios();
 
             var _UsuarioVM = new List<UsuarioVM>();
 

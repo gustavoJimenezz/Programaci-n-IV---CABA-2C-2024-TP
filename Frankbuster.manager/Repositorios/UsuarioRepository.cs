@@ -171,6 +171,8 @@ namespace BlockBuster.manager.Repositorios
         /// <param name="Usuario_Id">Id del usuario que sera dado de baja</param
         /// <returns></returns>
 
+
+        //FALTA CAMPO FechaBaja EN LA TABLA USUARIOS 
         public bool EliminarUsuario(int IdUsuario)
         {
             using (IDbConnection conn = new SqlConnection(_connectionString))

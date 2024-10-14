@@ -17,7 +17,7 @@ namespace BlockBuster.manager.Manager
         Usuario GetUsuario(int IdUsuario);
         int CrearUsuario(Usuario usuario);
         bool ModificarUsuario(int IdUsuario, Usuario usuario);
-        bool EliminarUsuario(int IdUsuario, int IdUsuarioBaja);
+        bool EliminarUsuario(int IdUsuario);
 
     }
 
@@ -66,8 +66,8 @@ namespace BlockBuster.manager.Manager
 
         public int CrearUsuario(Usuario usuario)          
         {
-            usuario.UsuarioId = usuario;
-            usuario.FechaAlta = DateTime.Now;
+            //usuario.UsuarioId = usuario;
+            //usuario.FechaAlta = DateTime.Now;
             var usu = _repo.CrearUsuario(usuario);
 
             return usu;
@@ -79,9 +79,9 @@ namespace BlockBuster.manager.Manager
         /// <param name="idUsuario">usuario dado de baja</param>
         /// <returns></returns>
         
-        public bool EliminarUsuario(int idUsuario,int IdUsuarioBaja)
+        public bool EliminarUsuario(int idUsuario)
         {
-            return _repo.EliminarUsuario(idUsuario, IdUsuarioBaja);
+            return _repo.EliminarUsuario(idUsuario);
         }
 
         /// <summary>
