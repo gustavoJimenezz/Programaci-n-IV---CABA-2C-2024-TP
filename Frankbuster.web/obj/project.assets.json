@@ -7097,24 +7097,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FERNANDO\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\gusta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\FERNANDO\\Facu\\Programacion4\\Programaci-n-IV---CABA-2C-2024-TP-main\\Frankbuster.web\\Frankbuster.web.csproj",
+      "projectUniqueName": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
       "projectName": "Frankbuster.web",
-      "projectPath": "C:\\Users\\FERNANDO\\Facu\\Programacion4\\Programaci-n-IV---CABA-2C-2024-TP-main\\Frankbuster.web\\Frankbuster.web.csproj",
-      "packagesPath": "C:\\Users\\FERNANDO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\FERNANDO\\Facu\\Programacion4\\Programaci-n-IV---CABA-2C-2024-TP-main\\Frankbuster.web\\obj\\",
+      "projectPath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
+      "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\FERNANDO\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -7122,15 +7117,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\FERNANDO\\Facu\\Programacion4\\Programaci-n-IV---CABA-2C-2024-TP-main\\Frankbuster.manager\\Frankbuster.manager.csproj": {
-              "projectPath": "C:\\Users\\FERNANDO\\Facu\\Programacion4\\Programaci-n-IV---CABA-2C-2024-TP-main\\Frankbuster.manager\\Frankbuster.manager.csproj"
+            "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Frankbuster.manager.csproj": {
+              "projectPath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\asp.net\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Frankbuster.manager.csproj"
             }
           }
         }
@@ -7182,7 +7176,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

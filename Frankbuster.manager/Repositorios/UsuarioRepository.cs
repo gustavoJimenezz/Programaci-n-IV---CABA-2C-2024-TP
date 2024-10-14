@@ -21,7 +21,7 @@ namespace BlockBuster.manager.Repositorios
         IEnumerable<UsuarioCompleto> GetUsuariosCompleto();
         int CrearUsuario(Usuario usuario);
         bool ModificarUsuario(int IdUsuario, Usuario usuario);
-        bool EliminarUsuario(int IdUsuario, int IdUsuarioBaja);
+        bool EliminarUsuario(int IdUsuario);
 
 
     }
