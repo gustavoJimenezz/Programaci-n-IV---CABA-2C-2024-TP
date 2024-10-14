@@ -3,22 +3,106 @@ using System.Collections.Generic;
 using Dapper;
 using Microsoft.Data.SqlClient;
 using BlockBuster.manager.Conexion;
+using BlockBuster.manager.ModelFactories;
+using System.Drawing.Text;
+using BlockBuster.manager.Repositorios;
+using System;
 
 namespace BlockBuster.manager.Manager
 {
-    public class UsuarioManager
+
+    public interface IUsuarioManager
     {
-        private readonly ConexionDB _conexion;
+        IEnumerable<UsuarioCompleto> GetUsuarios();
+        Usuario GetUsuario(int IdUsuario);
+        int CrearUsuario(Usuario usuario);
+        bool ModificarUsuario(int IdUsuario, Usuario usuario);
+        bool EliminarUsuario(int IdUsuario, int IdUsuarioBaja);
 
-        public UsuarioManager(ConexionDB conexion)
+    }
+
+
+
+    public class UsuarioManager:IUsuarioManager
+    {
+        
+        private IUsuarioRepository _repo;
+
+        public UsuarioManager(IUsuarioRepository repo)
         {
-            _conexion = conexion;
+            _repo = repo;
         }
 
-        public IEnumerable<Usuario> ObtenerUsuarios()
+        /// <summary>
+        /// Obtiene un Usuario por Id 
+        /// </summary>
+        /// <param name="IdUsuario">Id del Usuario</param>
+        /// <returns></returns>
+
+        public Usuario GetUsuario(int IdUsuario)
         {
-            var sql = "SELECT * FROM usuario";
-            return _conexion.EjecutarConsulta<Usuario>(sql);
+            var usuario = _repo.GetUsuario(IdUsuario);
+
+            return usuario;
+
         }
+
+        /// <summary>
+        /// Obtiene una lista de Usuarios
+        /// </summary>
+        /// <returns></returns>
+
+        public IEnumerable<UsuarioCompleto> GetUsuarios()
+        {
+            return _repo.GetUsuariosCompleto();
+
+        }
+
+        /// <summary>
+        /// Crea un Container en la Base de Datos
+        /// </summary>
+        /// <param name="IdUsuario">Datos del usuario</param>
+        /// <returns></returns>
+
+        public int CrearUsuario(Usuario usuario)          
+        {
+            usuario.UsuarioId = usuario;
+            usuario.FechaAlta = DateTime.Now;
+            var usu = _repo.CrearUsuario(usuario);
+
+            return usu;
+
+        }
+        /// <summary>
+        /// Elimina un usuario
+        /// </summary>
+        /// <param name="idUsuario">usuario dado de baja</param>
+        /// <returns></returns>
+        
+        public bool EliminarUsuario(int idUsuario,int IdUsuarioBaja)
+        {
+            return _repo.EliminarUsuario(idUsuario, IdUsuarioBaja);
+        }
+
+        /// <summary>
+        /// Modifica los datos de un usuario a partir de un Id
+        /// </summary>
+        /// <param name="IdUsuario">Id del usuario a modificar</param>
+        /// <returns></returns>
+
+        public bool ModificarUsuario(int IdUsuario, Usuario usuario)
+        {
+            var usuarioEnDb = _repo.GetUsuario(IdUsuario);
+
+            usuarioEnDb.Nombre = usuario.Nombre;
+            usuarioEnDb.IdentificacionId = usuario.IdentificacionId;
+           
+            var usu = _repo.ModificarUsuario(IdUsuario, usuario);
+
+            return usu;
+
+        }
+     
+
     }
 }

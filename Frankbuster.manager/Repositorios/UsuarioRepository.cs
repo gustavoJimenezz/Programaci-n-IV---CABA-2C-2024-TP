@@ -1,4 +1,5 @@
 ﻿using BlockBuster.manager.Entidades;
+using BlockBuster.manager.ModelFactories;
 using Dapper;
 using System;
 using System.Collections.Generic;
@@ -17,7 +18,7 @@ namespace BlockBuster.manager.Repositorios
         Usuario GetUsuario(int IdUsuario);
 
         IEnumerable<Usuario> GetUsuarios(bool? SoloActivos = true);
-   //     IEnumerable<UsuarioCompleto> GetUsuariosCompleto();
+        IEnumerable<UsuarioCompleto> GetUsuariosCompleto();
         int CrearUsuario(Usuario usuario);
         bool ModificarUsuario(int IdUsuario, Usuario usuario);
         bool EliminarUsuario(int IdUsuario, int IdUsuarioBaja);
@@ -32,7 +33,7 @@ namespace BlockBuster.manager.Repositorios
 
         public UsuarioRepository(string connectionString)
         {
-            _connectionString = ConnectionString;
+            _connectionString = connectionString;
 
         }
 
@@ -81,18 +82,27 @@ namespace BlockBuster.manager.Repositorios
         /// <summary>
         /// Obtiene una lista completa de los usuarios
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Lista completa de usuarios</returns>
         /// 
-        ///public IEnumerable<UsuarioCompleto> GetUsuarioCompletos()
-        ///{
+        public IEnumerable<UsuarioCompleto> GetUsuarioCompletos()
+        {
 
-        ///       using (IDbConnection conn = new SqlConnection(_connectionString))
-        ///    {
-        ///        IEnumerable <Usuario> results = 
-                    
+            using (IDbConnection conn = new SqlConnection(_connectionString))
+            {
+
+                string query = @"SELECT Usuario-*,
+
+                                  ";
 
 
-        ///    }
+
+                IEnumerable<UsuarioCompleto> results = conn.Query<UsuarioCompleto>(query);
+
+                return results;
+
+             }
+
+        }
 
 
   
@@ -146,7 +156,7 @@ namespace BlockBuster.manager.Repositorios
                                 Fecha_Alta = @Fecha_Alta, 
                                 Activo  = @Activo    
 
-                                WHERE Usuario_Id = " + Usuario_Id.ToString();
+                                WHERE Usuario_Id = " + IdUsuario.ToString();
 
                 // conn.execute devuelve un entero que representa la cantidad de filas afectadas. 
                 //Se espera que se haya modificado solo un registro, por eso se lo compara con un 1.
@@ -166,25 +176,27 @@ namespace BlockBuster.manager.Repositorios
             using (IDbConnection conn = new SqlConnection(_connectionString))
             {
 
-                strig query = @"Update 
+                string query = @"Update 
                                       Usuario
                                SET
 
                                    FechaBaja = '" + DateTime.Now.ToString("yyyyMMdd") + "'," +
-                                    "WHERE Usuario_Id =" + UsuarioId.ToString();
+                                    "WHERE Usuario_Id =" + IdUsuario.ToString();
                 //db.execute devuelve un entero que representa la cantidad de filas afectadas. 
                 //Se espera que se haya modificado solo un registro, por eso se lo compara con un 1.
                 return conn.Execute(query) == 1;
             }
         }
 
+        public IEnumerable<UsuarioCompleto> GetUsuariosCompleto()
+        {
+            throw new NotImplementedException();
+        }
 
-
-
-
-
-
-
+        public bool EliminarUsuario(int IdUsuario, int IdUsuarioBaja)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

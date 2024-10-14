@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BlockBuster.manager.ModelFactories
 {
-    public class UsuarioModelFactory
+    public class UsuarioCompleto
     {
         public int UsuarioId { get; set; }
         public string Nombre { get; set; }
