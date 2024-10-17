@@ -7,9 +7,9 @@ namespace Blockbuster.web.Controllers
 {
     public class UsuarioController : Controller
     {
-        private readonly UsuarioManager _usuarioManager;
-
-        public UsuarioController(UsuarioManager usuarioManager)
+        //private readonly UsuarioManager _usuarioManager;
+        private readonly IUsuarioManager _usuarioManager;
+        public UsuarioController(IUsuarioManager usuarioManager)
         {
             _usuarioManager = usuarioManager;
         }
@@ -18,19 +18,7 @@ namespace Blockbuster.web.Controllers
         public ActionResult Index()
         {
             var usuarios = _usuarioManager.GetUsuarios();
-
-            var _UsuarioVM = new List<UsuarioVM>();
-
-            foreach (var usuario in usuarios)
-            {
-                _UsuarioVM.Add(new UsuarioVM
-                {
-                    Name = usuario.Nombre,
-                    Activo = usuario.Activo
-                });
-            }
-
-            return View(_UsuarioVM);
+            return View(usuarios);
         }
 
         // GET: UsuarioController/Details/5

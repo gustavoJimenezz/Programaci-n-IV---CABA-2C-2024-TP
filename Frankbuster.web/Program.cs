@@ -10,6 +10,9 @@ var connectionString = builder.Configuration.GetConnectionString("ConexionDefaul
 ConexionDB miConexion = new ConexionDB(connectionString);
 
 builder.Services.AddControllersWithViews();
+
+
+builder.Services.AddScoped<IUsuarioManager, UsuarioManager>();
 builder.Services.AddScoped<IUsuarioRepository>(provider => new UsuarioRepository(connectionString));
 builder.Services.AddScoped<IPeliculaRepository>(provider => new ContainerRepository(connectionString));
 

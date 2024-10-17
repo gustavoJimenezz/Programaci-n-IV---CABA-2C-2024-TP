@@ -1,8 +1,8 @@
 # Ignorar los directorios obj
 **/obj/
 # Ignorar archivos de configuración de Visual Studio
+.vs
 
-./vs
 
 # Ignorar archivos binarios y temporales de Visual Studio
 bin/

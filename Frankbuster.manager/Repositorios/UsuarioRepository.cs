@@ -192,7 +192,11 @@ namespace BlockBuster.manager.Repositorios
 
         public IEnumerable<UsuarioCompleto> GetUsuariosCompleto()
         {
-            throw new NotImplementedException();
+            using (IDbConnection con = new SqlConnection(_connectionString))
+            {
+                IEnumerable<UsuarioCompleto> results =con.Query<UsuarioCompleto>(@"SELECT * FROM usuario;");
+                return results;
+            }
         }
 
         public bool EliminarUsuario(int IdUsuario, int IdUsuarioBaja)
