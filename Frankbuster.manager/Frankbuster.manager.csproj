@@ -160,6 +160,7 @@
     <Compile Include="Entidades\Pelicula.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Manager\IdentificacionManager.cs" />
+    <Compile Include="Manager\PeliculasManager.cs" />
     <Compile Include="Manager\UsuarioManager.cs" />
     <Compile Include="ModelFactories\PeliculaModelFactory.cs" />
     <Compile Include="ModelFactories\UsuarioModelFactory.cs" />
