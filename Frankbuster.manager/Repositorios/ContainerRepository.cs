@@ -8,6 +8,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -118,8 +119,8 @@ namespace BlockBuster.manager.Repositorios
             using (IDbConnection conn = new SqlConnection(_connectionString))
             {
 
-                string query = @"INSERT INTO peliculas (pelicula_id, titulo, descripcion, fecha_estreno)  
-                            VALUES ( @pelicula_id, @titulo, @descripcion, @fecha_estreno)                    ";
+                string query = @"INSERT INTO peliculas (titulo, descripcion, fecha_estreno)  
+                            VALUES (@titulo, @descripcion, @fecha_estreno)";
 
 
                 pelicula.pelicula_id = conn.QuerySingle<int>(query, pelicula);
@@ -189,7 +190,18 @@ namespace BlockBuster.manager.Repositorios
 
         public IEnumerable<PeliculaCompleta> GetPeliculaCompleta()
         {
-            throw new NotImplementedException();
+            using (IDbConnection conn = new SqlConnection(_connectionString))
+            {
+
+                string query = @"SELECT * FROM 
+                                      peliculas";
+                IEnumerable<PeliculaCompleta> results = conn.Query<PeliculaCompleta>(query);
+                return results;
+            }
+            
+                               
+
+               throw new NotImplementedException();
         }
 
         public bool EliminarPelicula(string titulo)

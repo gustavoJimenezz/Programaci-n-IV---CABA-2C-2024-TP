@@ -11,6 +11,6 @@ namespace BlockBuster.manager.Entidades
         public int pelicula_id { get; set; }
         public string titulo { get; set; }
         public string descripcion { get; set; }
-        public string? fecha_estreno { get; set; }
+        public string fecha_estreno { get; set; }
     }
 }

@@ -24,7 +24,7 @@ namespace Frankbuster.web.Controllers
         public ActionResult Index()
         {
             var peliculas = _peliculasManager.GetPeliculas();
-            return View(peliculas);
+            return View("Create");
         }
 
         // GET: PeliculasController/Details/5
@@ -61,7 +61,7 @@ namespace Frankbuster.web.Controllers
                 Pelicula peliculasModel = new Pelicula();
                 peliculasModel.titulo = collection["titulo"];
                 peliculasModel.descripcion = collection["descripcion"];
-                peliculasModel.fecha_estreno = collection["fecha_estreno"];
+                peliculasModel.fecha_estreno = collection["fecha_publicacion"];
 
                 _peliculasManager.CrearPelicula(peliculasModel);
 

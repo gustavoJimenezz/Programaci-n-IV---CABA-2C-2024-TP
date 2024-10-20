@@ -13,6 +13,7 @@ builder.Services.AddControllersWithViews();
 
 
 builder.Services.AddScoped<IUsuarioManager, UsuarioManager>();
+builder.Services.AddScoped<IPeliculasManager, PeliculasManager>();
 builder.Services.AddScoped<IUsuarioRepository>(provider => new UsuarioRepository(connectionString));
 builder.Services.AddScoped<IPeliculaRepository>(provider => new ContainerRepository(connectionString));
 
