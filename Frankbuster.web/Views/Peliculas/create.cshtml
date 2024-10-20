@@ -6,7 +6,12 @@
 }
 
 <h1>create</h1>
-
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
 <h4>PeliculaVM</h4>
 <hr />
 <div class="row">

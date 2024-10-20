@@ -48,9 +48,13 @@ namespace BlockBuster.manager.Repositorios
         {
             using (IDbConnection con = new SqlConnection(_connectionString))
             {
-
+                //pelicula_id = 9;
                 string query = "SELECT * FROM peliculas WHERE pelicula_id = " + pelicula_id.ToString();
 
+
+
+                // PROBANDO 20/10
+                //string query = "SELECT * FROM peliculas WHERE 1";
                 Pelicula result = con.QuerySingle<Pelicula>(query);
 
                 return result;
@@ -119,8 +123,8 @@ namespace BlockBuster.manager.Repositorios
             using (IDbConnection conn = new SqlConnection(_connectionString))
             {
 
-                string query = @"INSERT INTO peliculas (titulo, descripcion, fecha_estreno)  
-                            VALUES (@titulo, @descripcion, @fecha_estreno)";
+                string query = @"INSERT INTO peliculas (titulo, descripcion, fecha_publicacion)  
+                            VALUES (@titulo, @descripcion, @fecha_publicacion)";
 
 
                 pelicula.pelicula_id = conn.QuerySingle<int>(query, pelicula);
@@ -173,20 +177,24 @@ namespace BlockBuster.manager.Repositorios
         //FALTA CAMPO FechaBaja EN LA TABLA USUARIOS 
         public bool EliminarPelicula(int pelicula_id)
         {
-            using (IDbConnection conn = new SqlConnection(_connectionString))
+            try
             {
-
-                string query = @"DELETE 
-                                      peliculas
-                               SET
-
-                                   fecha_estreno = '" + DateTime.Now.ToString("yyyyMMdd") + "'," +
-                                    "WHERE pelicula_id =" + pelicula_id.ToString();
-                //db.execute devuelve un entero que representa la cantidad de filas afectadas. 
-                //Se espera que se haya modificado solo un registro, por eso se lo compara con un 1.
-                return conn.Execute(query) == 1;
+                using (IDbConnection conn = new SqlConnection(_connectionString))
+                {
+                    string query = @"DELETE FROM peliculas WHERE pelicula_id = @PeliculaId";
+                    conn.Open();
+                    var result = conn.Execute(query, new { PeliculaId = pelicula_id });
+                    return result == 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                // Manejar la excepción (por ejemplo, registrar el error)
+                Console.WriteLine(ex.Message);
+                return false;
             }
         }
+
 
         public IEnumerable<PeliculaCompleta> GetPeliculaCompleta()
         {

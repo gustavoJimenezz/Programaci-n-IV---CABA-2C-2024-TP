@@ -24,18 +24,28 @@ namespace Frankbuster.web.Controllers
         public ActionResult Index()
         {
             var peliculas = _peliculasManager.GetPeliculas();
-            return View("Create");
+            return View("Delete");
         }
 
         // GET: PeliculasController/Details/5
         public ActionResult Details(int id)
         {
-            var container = _peliculasManager.GetPelicula(id);
+            var peliculas = _peliculasManager.GetPeliculas(); // Obtener todas las películas
 
-            PeliculaVM peliculasModel = new PeliculaVM();
-            peliculasModel.titulo = container.titulo;
-            peliculasModel.descripcion = container.descripcion;
-            peliculasModel.fecha_publicacion = container.fecha_estreno;
+            // Asumimos que el método GetPeliculas devuelve una lista de objetos de película
+            List<PeliculaVM> peliculasModel = new List<PeliculaVM>();
+
+            // Convertir cada película a PeliculaVM
+            foreach (var pelicula in peliculas)
+            {
+                PeliculaVM modelo = new PeliculaVM
+                {
+                    titulo = pelicula.titulo,
+                    descripcion = pelicula.descripcion,
+                    fecha_publicacion = pelicula.fecha_publicacion
+                };
+                peliculasModel.Add(modelo);
+            }
 
             return View(peliculasModel);
         }
@@ -61,11 +71,13 @@ namespace Frankbuster.web.Controllers
                 Pelicula peliculasModel = new Pelicula();
                 peliculasModel.titulo = collection["titulo"];
                 peliculasModel.descripcion = collection["descripcion"];
-                peliculasModel.fecha_estreno = collection["fecha_publicacion"];
+                peliculasModel.fecha_publicacion = collection["fecha_publicacion"];
 
                 _peliculasManager.CrearPelicula(peliculasModel);
+                TempData["SuccessMessage"] = "La película ha sido creada exitosamente.";
 
-            return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index));
+                
 
             }
             catch
@@ -82,7 +94,7 @@ namespace Frankbuster.web.Controllers
             PeliculaVM peliculaModel = new PeliculaVM();
             peliculaModel.titulo = pelicula.titulo;
             peliculaModel.descripcion = pelicula.descripcion;
-            peliculaModel.fecha_publicacion = pelicula.fecha_estreno;
+            peliculaModel.fecha_publicacion = pelicula.fecha_publicacion;
 
             return View(peliculaModel);
         }
@@ -98,7 +110,7 @@ namespace Frankbuster.web.Controllers
                 {
                     titulo = collection["titulo"],
                     descripcion = collection["descripcion"],
-                    fecha_estreno = collection["fecha_estreno"],
+                    fecha_publicacion = collection["fecha_publicacion"],
                 };
                 
 
@@ -120,7 +132,7 @@ namespace Frankbuster.web.Controllers
             PeliculaVM peliculasModel = new PeliculaVM();
             peliculasModel.titulo = container.titulo;
             peliculasModel.descripcion = container.descripcion;
-            peliculasModel.fecha_publicacion = container.fecha_estreno;
+            peliculasModel.fecha_publicacion = container.fecha_publicacion;
 
             return View(peliculasModel);
         }

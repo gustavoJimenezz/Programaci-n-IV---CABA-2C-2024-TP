@@ -11,6 +11,6 @@ namespace BlockBuster.manager.ModelFactories
         public int pelicula_id { get; set; }
         public string titulo { get; set; }
         public string descripcion { get; set; }
-        public DateTime fecha_estreno { get; set; }
+        public string fecha_publicacion { get; set; }
     }
 }

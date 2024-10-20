@@ -58,7 +58,7 @@ namespace BlockBuster.manager.Manager
 
             peliculaEnDb.titulo = pelicula.titulo;
             peliculaEnDb.descripcion = pelicula.descripcion;
-            peliculaEnDb.fecha_estreno = pelicula.fecha_estreno;
+            peliculaEnDb.fecha_publicacion = pelicula.fecha_publicacion;
 
             var peli = _repo.ModificarPelicula(pelicula_id, pelicula);
 
