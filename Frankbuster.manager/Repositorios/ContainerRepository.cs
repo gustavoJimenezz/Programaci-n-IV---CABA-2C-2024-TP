@@ -156,7 +156,8 @@ namespace BlockBuster.manager.Repositorios
                                  
                                 titulo = @titulo, 
                                  
-                                descripcion  = @descripcion    
+                                descripcion  = @descripcion,
+                                fecha_publicacion = @fecha_publicacion
 
                                 WHERE pelicula_id = " + pelicula_id.ToString();
 

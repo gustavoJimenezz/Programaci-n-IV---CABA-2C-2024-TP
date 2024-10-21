@@ -4,6 +4,7 @@ using Frankbuster.web.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.IdentityModel.Tokens;
 using System.ComponentModel;
 
 namespace Frankbuster.web.Controllers
@@ -74,6 +75,14 @@ namespace Frankbuster.web.Controllers
                 peliculasModel.descripcion = collection["descripcion"];
                 peliculasModel.fecha_publicacion = collection["fecha_publicacion"];
 
+                if (string.IsNullOrWhiteSpace(peliculasModel.titulo) ||
+            string.IsNullOrWhiteSpace(peliculasModel.descripcion) ||
+            string.IsNullOrWhiteSpace(peliculasModel.fecha_publicacion))
+                {
+                    // Si alguno de los campos está vacío, mostrar un mensaje de error
+                    TempData["ErrorMessage"] = "Todos los campos son obligatorios.";
+                    return View();
+                }
                 _peliculasManager.CrearPelicula(peliculasModel);
                 TempData["SuccessMessage"] = "La película ha sido creada exitosamente.";
 

@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1>Lista Películas</h1>
 
 <p>
-    <a class="nav-link text-dark" asp-area="" asp-controller="Peliculas" asp-action="create">Crear</a>
+    <a class="btn btn-success" asp-area="" asp-controller="Peliculas" asp-action="create">Crear</a>
 </p>
 <table class="table">
     <thead>
@@ -17,13 +17,14 @@
                 @Html.DisplayNameFor(model => model.pelicula_id)
             </th> *@
             <th>
-                @Html.DisplayNameFor(model => model.titulo)
+                Titulo
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.descripcion)
+                Descripción
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.fecha_publicacion)
+
+                Fecha Publicación
             </th>
             <th></th>
         </tr>
@@ -44,8 +45,8 @@
                 @Html.DisplayFor(modelItem => item.fecha_publicacion)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.pelicula_id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.pelicula_id })
+                    @Html.ActionLink("Editar", "Edit", new { id = item.pelicula_id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.pelicula_id }, new { @class = "btn btn-danger" })
 
             </td>
                 
