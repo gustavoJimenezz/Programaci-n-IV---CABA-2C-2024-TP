@@ -33,7 +33,6 @@ namespace Frankbuster.web.Controllers
         {
             var peliculas = _peliculasManager.GetPeliculas(); // Obtener todas las películas
 
-            // Asumimos que el método GetPeliculas devuelve una lista de objetos de película
             List<PeliculaVM> peliculasModel = new List<PeliculaVM>();
 
             // Convertir cada película a PeliculaVM
@@ -76,11 +75,13 @@ namespace Frankbuster.web.Controllers
                 peliculasModel.fecha_publicacion = collection["fecha_publicacion"];
 
                 if (string.IsNullOrWhiteSpace(peliculasModel.titulo) ||
-            string.IsNullOrWhiteSpace(peliculasModel.descripcion) ||
-            string.IsNullOrWhiteSpace(peliculasModel.fecha_publicacion))
+                    string.IsNullOrWhiteSpace(peliculasModel.descripcion) ||
+                    string.IsNullOrWhiteSpace(peliculasModel.fecha_publicacion))
                 {
                     // Si alguno de los campos está vacío, mostrar un mensaje de error
                     TempData["ErrorMessage"] = "Todos los campos son obligatorios.";
+                    //return View();
+
                     return View();
                 }
                 _peliculasManager.CrearPelicula(peliculasModel);
@@ -116,17 +117,26 @@ namespace Frankbuster.web.Controllers
         {
             try
             {
+
                 Pelicula pelicula = new Pelicula()
                 {
                     titulo = collection["titulo"],
                     descripcion = collection["descripcion"],
                     fecha_publicacion = collection["fecha_publicacion"],
                 };
-                
 
-                _peliculasManager.ModificarPelicula(id, pelicula);
+                if (string.IsNullOrWhiteSpace(pelicula.titulo) ||
+                    string.IsNullOrWhiteSpace(pelicula.descripcion) ||
+                    string.IsNullOrWhiteSpace(pelicula.fecha_publicacion))
+                {
+                    TempData["ErrorMessage"] = "Todos los campos son obligatorios.";
+                    return RedirectToAction(nameof(Edit));
 
-                return View("../Home/index");
+                }else{
+                    TempData["SuccessMessage"] = "Película modificada exitosamente.";
+                    _peliculasManager.ModificarPelicula(id, pelicula);
+                    return RedirectToAction(nameof(Details));
+                }
             }
             catch
             {
@@ -155,8 +165,10 @@ namespace Frankbuster.web.Controllers
             try
             {
                 _peliculasManager.EliminarPelicula(id);
+                TempData["SuccessMessage"] = "Película eliminada exitosamente.";
+                //return View("../Home/index");
+                return RedirectToAction(nameof(Details));
 
-                return View("../Home/index");
             }
             catch
             {

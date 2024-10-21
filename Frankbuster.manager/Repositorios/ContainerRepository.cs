@@ -123,17 +123,15 @@ namespace BlockBuster.manager.Repositorios
             using (IDbConnection conn = new SqlConnection(_connectionString))
             {
 
-                string query = @"INSERT INTO peliculas (titulo, descripcion, fecha_publicacion)  
-                            VALUES (@titulo, @descripcion, @fecha_publicacion)";
+                string query = @"
+                                INSERT INTO peliculas (titulo, descripcion, fecha_publicacion)  
+                                VALUES (@titulo, @descripcion, @fecha_publicacion);
+                                SELECT CAST(SCOPE_IDENTITY() AS int);"; // Obtener el último ID insertado
 
+                int peliculaId = conn.QuerySingle<int>(query, pelicula);
 
-                pelicula.pelicula_id = conn.QuerySingle<int>(query, pelicula);
-
-
-                return pelicula.pelicula_id;
+                return peliculaId;
             }
-
-
         }
 
 
