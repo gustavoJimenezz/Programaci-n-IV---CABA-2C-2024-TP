@@ -97,7 +97,7 @@ namespace Frankbuster.web.Controllers
             peliculaModel.descripcion = pelicula.descripcion;
             peliculaModel.fecha_publicacion = pelicula.fecha_publicacion;
 
-            return View(pelicula);
+            return View(peliculaModel);
         }
 
         // POST: PeliculasController/Edit/5
@@ -116,8 +116,8 @@ namespace Frankbuster.web.Controllers
                 
 
                 _peliculasManager.ModificarPelicula(id, pelicula);
- 
-                return RedirectToAction(nameof(Index));
+
+                return View("../Home/index");
             }
             catch
             {
