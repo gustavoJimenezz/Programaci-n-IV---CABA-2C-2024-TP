@@ -1,10 +1,11 @@
-## Credenciales
+# Grupo 4
 
-emaill : admin@admin.com
-contra : admin1234
+CRUD - peliculas
 
-## Conexion 
+## Integrantes:
 
-Cambiar String de conexion
-Blockbuster.web/adppsetting.json : 
-"ConexionDefault"
+* Tomas Lanza 
+* Lucas Aguirre
+* Gustavo Jimenez
+* Franco Seccaspina
+* Fernando Rojas
