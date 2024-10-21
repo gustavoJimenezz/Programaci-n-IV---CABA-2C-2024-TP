@@ -1682,7 +1682,14 @@
         }
       },
       "System.Diagnostics.EventLog/8.0.0": {},
-      "System.Formats.Asn1/8.0.1": {},
+      "System.Formats.Asn1/8.0.1": {
+        "runtime": {
+          "lib/net8.0/System.Formats.Asn1.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.724.31311"
+          }
+        }
+      },
       "System.IdentityModel.Tokens.Jwt/6.35.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "6.35.0",
@@ -1792,10 +1799,7 @@
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "Frankbuster.manager/1.0.0": {
         "runtime": {
-          "BlockBuster.manager.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": ""
-          }
+          "BlockBuster.manager.dll": {}
         }
       },
       "Dapper/2.0.0.0": {

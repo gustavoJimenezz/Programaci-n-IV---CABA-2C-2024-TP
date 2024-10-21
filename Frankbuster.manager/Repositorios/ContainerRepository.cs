@@ -55,7 +55,7 @@ namespace BlockBuster.manager.Repositorios
 
                 // PROBANDO 20/10
                 //string query = "SELECT * FROM peliculas WHERE 1";
-                Pelicula result = con.QuerySingle<Pelicula>(query);
+                Pelicula result = con.QuerySingle<Pelicula>(query, pelicula_id);
 
                 return result;
             }

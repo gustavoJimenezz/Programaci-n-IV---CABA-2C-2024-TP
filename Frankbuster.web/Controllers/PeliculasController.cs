@@ -28,7 +28,7 @@ namespace Frankbuster.web.Controllers
         }
 
         // GET: PeliculasController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
             var peliculas = _peliculasManager.GetPeliculas(); // Obtener todas las películas
 
@@ -40,6 +40,7 @@ namespace Frankbuster.web.Controllers
             {
                 PeliculaVM modelo = new PeliculaVM
                 {
+                    pelicula_id = pelicula.pelicula_id,
                     titulo = pelicula.titulo,
                     descripcion = pelicula.descripcion,
                     fecha_publicacion = pelicula.fecha_publicacion
@@ -76,7 +77,7 @@ namespace Frankbuster.web.Controllers
                 _peliculasManager.CrearPelicula(peliculasModel);
                 TempData["SuccessMessage"] = "La película ha sido creada exitosamente.";
 
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Details));
                 
 
             }
@@ -96,7 +97,7 @@ namespace Frankbuster.web.Controllers
             peliculaModel.descripcion = pelicula.descripcion;
             peliculaModel.fecha_publicacion = pelicula.fecha_publicacion;
 
-            return View(peliculaModel);
+            return View(pelicula);
         }
 
         // POST: PeliculasController/Edit/5
@@ -134,7 +135,7 @@ namespace Frankbuster.web.Controllers
             peliculasModel.descripcion = container.descripcion;
             peliculasModel.fecha_publicacion = container.fecha_publicacion;
 
-            return View(peliculasModel);
+            return View(container);
         }
 
         // POST: PeliculasController/Delete/5
@@ -146,7 +147,7 @@ namespace Frankbuster.web.Controllers
             {
                 _peliculasManager.EliminarPelicula(id);
 
-                return RedirectToAction(nameof(Index));
+                return View("../Home/index");
             }
             catch
             {
