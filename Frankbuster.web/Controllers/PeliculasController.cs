@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.IdentityModel.Tokens;
 using System.ComponentModel;
+using System.ComponentModel.Design;
 
 namespace Frankbuster.web.Controllers
 {
@@ -175,5 +176,8 @@ namespace Frankbuster.web.Controllers
                 return View();
             }
         }
+
+        //COMPRAR PELICULA/ ID USUARIO/ DATATMIME (OPCIONA)/ STOCK (VER)
+
     }
 }

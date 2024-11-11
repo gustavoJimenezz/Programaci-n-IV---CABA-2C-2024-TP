@@ -22,8 +22,8 @@ namespace BlockBuster.manager.Repositorios
         int CrearUsuario(Usuario usuario);
         bool ModificarUsuario(int IdUsuario, Usuario usuario);
         bool EliminarUsuario(int IdUsuario);
-
-
+        Usuario GetUsuarioPorGoogleSubject(string googleSubject);
+        string ObtenerRol(int idUsuario);
     }
 
     public class UsuarioRepository : IUsuarioRepository
@@ -120,8 +120,8 @@ namespace BlockBuster.manager.Repositorios
             using (IDbConnection conn = new SqlConnection(_connectionString))
             {
 
-                string query = @"INSERT INTO Usuario (Usuario_id, nombre, fecha_alta, activo, identificacion_id)  
-                            VALUES ( @usuario_id, @nombre, @fecha_alta, @activo, @identificacion_id);                    
+                string query = @"INSERT INTO Usuario (nombre, fecha_alta, activo, identificacion_id, googleIdentificador)  
+                            VALUES (@nombre, @fechaAlta, @activo, @identificacionId, @googleIdentificador);                    
                             SELECT CAST(SCOPE_IDENTITY() AS INT) ";
 
 
@@ -203,6 +203,30 @@ namespace BlockBuster.manager.Repositorios
         {
             throw new NotImplementedException();
         }
-    }
 
+
+        public Usuario GetUsuarioPorGoogleSubject(string googleSubject)
+        {
+            using (IDbConnection db = new SqlConnection(_connectionString))
+            {
+                Usuario usuarios = db.Query<Usuario>("SELECT * FROM Usuario WHERE googleIdentificador = '" + googleSubject.ToString() + "'").FirstOrDefault();
+                return usuarios;
+            }
+        }
+
+        public string ObtenerRol(int idUsuario)
+        {
+            using (IDbConnection db = new SqlConnection(_connectionString))
+            {
+                var query = "SELECT r.nombre_rol " +
+                            "FROM relacion_usuario_rol ur " +
+                            "JOIN roles r ON ur.rol_id = r.rol_id " +
+                            "WHERE ur.usuario_id = @UsuarioId";
+
+                var nombreRol = db.Query<string>(query, new { UsuarioId = idUsuario }).FirstOrDefault();
+
+                return nombreRol;
+            }
+        }
+    }
 }

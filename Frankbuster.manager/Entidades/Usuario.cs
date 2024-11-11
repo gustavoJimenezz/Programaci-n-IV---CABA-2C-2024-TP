@@ -13,5 +13,6 @@ namespace BlockBuster.manager.Entidades
         public DateTime FechaAlta { get; set; }
         public bool Activo { get; set; }
         public int? IdentificacionId { get; set; }
+        public string GoogleIdentificador { get; set; }
     }
 }
