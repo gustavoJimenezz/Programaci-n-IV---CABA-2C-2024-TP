@@ -2,9 +2,23 @@ using BlockBuster.manager.Conexion;
 using BlockBuster.manager.Manager;
 using BlockBuster.manager.Repositorios;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Authentication.Google;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddAuthentication(Options =>
+{
+    Options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    Options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+}).AddCookie().AddGoogle(GoogleDefaults.AuthenticationScheme, Options =>
+{
+    Options.ClientId = builder.Configuration.GetSection("GoogleKeys:ClientId").Value;
+    Options.ClientSecret = builder.Configuration.GetSection("GoogleKeys:ClientSecret").Value;
+});
+    
 var connectionString = builder.Configuration.GetConnectionString("ConexionDefault");
+
+
 
 //HAY QUE BORRAR, ConexionDB YA QUE SE HACE LA CONEXION EN REPOSITORIOS
 ConexionDB miConexion = new ConexionDB(connectionString);

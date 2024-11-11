@@ -641,6 +641,22 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Authentication.Google/8.0.10": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Razor.Language/6.0.24": {
         "type": "package",
         "compile": {
@@ -3273,6 +3289,21 @@
         "lib/netstandard1.0/zh-Hant/Humanizer.resources.dll",
         "lib/netstandard2.0/zh-Hant/Humanizer.resources.dll",
         "logo.png"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Google/8.0.10": {
+      "sha512": "ponvsoyGJKn19I8lbOE7RKP4et1sT4Mf5OFtBqF/5+CVfC4dgQry/jQud9rF66iFy0kdUHOoIK9LXtBfePQjvg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.google/8.0.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.Google.xml",
+        "microsoft.aspnetcore.authentication.google.8.0.10.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.google.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.24": {
@@ -7088,6 +7119,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Frankbuster.manager >= 1.0.0",
+      "Microsoft.AspNetCore.Authentication.Google >= 8.0.10",
       "Microsoft.Data.SqlClient >= 5.2.2",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.6",
       "System.Data.SqlClient >= 4.8.6"
@@ -7099,11 +7131,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
+      "projectUniqueName": "C:\\Users\\gusta\\Desktop\\TP-completo\\Nueva carpeta\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
       "projectName": "Frankbuster.web",
-      "projectPath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
+      "projectPath": "C:\\Users\\gusta\\Desktop\\TP-completo\\Nueva carpeta\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\Frankbuster.web.csproj",
       "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\obj\\",
+      "outputPath": "C:\\Users\\gusta\\Desktop\\TP-completo\\Nueva carpeta\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.web\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -7120,8 +7152,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Frankbuster.manager.csproj": {
-              "projectPath": "C:\\Users\\gusta\\Desktop\\REPOSITORIOS\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Frankbuster.manager.csproj"
+            "C:\\Users\\gusta\\Desktop\\TP-completo\\Nueva carpeta\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Frankbuster.manager.csproj": {
+              "projectPath": "C:\\Users\\gusta\\Desktop\\TP-completo\\Nueva carpeta\\Programaci-n-IV---CABA-2C-2024-TP\\Frankbuster.manager\\Frankbuster.manager.csproj"
             }
           }
         }
@@ -7141,6 +7173,10 @@
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Google": {
+            "target": "Package",
+            "version": "[8.0.10, )"
+          },
           "Microsoft.Data.SqlClient": {
             "target": "Package",
             "version": "[5.2.2, )"

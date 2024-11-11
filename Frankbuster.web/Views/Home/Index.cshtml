@@ -1,7 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
+<br/>
+@if (Context.User.Identity.IsAuthenticated)
+{
+    <br />
+    <h3>Welcome @User.Identity.Name</h3>
+    <br/>
+    <a asp-controller="Login" asp-action="Logout">Logout</a>
+}
 <div class="text-center">
     <h1 class="display-4">Bienvenido a FrankBuster</h1>
     

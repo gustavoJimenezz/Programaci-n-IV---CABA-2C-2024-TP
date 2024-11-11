@@ -17,67 +17,75 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Frankbuster.web
 build_property.RootNamespace = Frankbuster.web
-build_property.ProjectDir = C:\Users\Administrator\Desktop\Facu\Programacion 4\FRANKBUSTER NASHE\Frankbuster.web\
+build_property.ProjectDir = C:\Users\Administrator\Desktop\Facu\Programacion 4\Programacion-IV---CABA-2C-2024-TP\Frankbuster.web\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Administrator\Desktop\Facu\Programacion 4\FRANKBUSTER NASHE\Frankbuster.web
+build_property.MSBuildProjectDirectory = C:\Users\Administrator\Desktop\Facu\Programacion 4\Programacion-IV---CABA-2C-2024-TP\Frankbuster.web
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Home/Index.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Home/Peliculass.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Home/Peliculass.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQZWxpY3VsYXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Identificacion/Index.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Identificacion/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSWRlbnRpZmljYWNpb25cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Peliculas/create.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Peliculas/create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFzXGNyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Peliculas/Delete.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Peliculas/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Peliculas/Details.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Peliculas/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Peliculas/Index.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Peliculas/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Peliculas/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Peliculas/View.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Peliculas/View.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVsaWN1bGFzXFZpZXcuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Shared/Error.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Usuario/Index.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Usuario/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/_ViewImports.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/_ViewStart.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Administrator/Desktop/Facu/Programacion 4/FRANKBUSTER NASHE/Frankbuster.web/Views/Shared/_Layout.cshtml]
+[C:/Users/Administrator/Desktop/Facu/Programacion 4/Programacion-IV---CABA-2C-2024-TP/Frankbuster.web/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-67hrbnzxqd

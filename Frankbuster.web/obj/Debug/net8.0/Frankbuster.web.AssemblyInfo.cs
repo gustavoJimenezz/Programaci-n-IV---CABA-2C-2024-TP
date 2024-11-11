@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Frankbuster.web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6736f6d35957075ef63b7bbfbf9675cc1b25da05")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a842ac970e62320cb17de5d900433e44c1e92579")]
 [assembly: System.Reflection.AssemblyProductAttribute("Frankbuster.web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Frankbuster.web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
