@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using System.Linq;
 using System.Threading.Tasks;
+using BlockBuster.manager.Entidades;
 
 namespace Frankbuster.web.Controllers
 {
@@ -12,6 +13,10 @@ namespace Frankbuster.web.Controllers
     {
         public IActionResult Index()
         {
+            return View();
+        }
+        public IActionResult Indexx()
+        {  
             return View();
         }
 
@@ -23,6 +28,7 @@ namespace Frankbuster.web.Controllers
                     RedirectUri = Url.Action("GoogleResponse")
                 });
         }
+        
 
         public async Task<IActionResult> GoogleResponse()
         {

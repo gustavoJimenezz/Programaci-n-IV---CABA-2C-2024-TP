@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Frankbuster.web.Models.PeliculaVM>
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Lista Películas</h1>
+@*
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["ErrorMessage"]
+    </div>
+} *@
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+<table class="table">
+    <thead>
+        <tr>
+            @*             <th>
+            @Html.DisplayNameFor(model => model.pelicula_id)
+            </th> *@
+            <th>
+                Titulo
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+
+                Fecha Publicación
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                @*             <td>
+            @Html.DisplayFor(modelItem => item.pelicula_id)
+            </td> *@
+                <td>
+                    @Html.DisplayFor(modelItem => item.titulo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.fecha_publicacion)
+                </td>
+                <td>
+                    @Html.ActionLink("Alquilar", "Alquilar", new { id = item.pelicula_id }, new { @class = "btn btn-primary" })
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+
+</table>

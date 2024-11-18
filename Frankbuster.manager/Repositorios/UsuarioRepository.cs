@@ -48,7 +48,7 @@ namespace BlockBuster.manager.Repositorios
             using (IDbConnection con = new SqlConnection(_connectionString))
             {
 
-                string query = "SELECT * FROM Usuario WHERE IdUsuario = " + IdUsuario.ToString();
+                string query = "SELECT * FROM Usuario WHERE usuario_id = " + IdUsuario.ToString();
 
                 Usuario result = con.QuerySingle<Usuario>(query);
 
@@ -209,7 +209,9 @@ namespace BlockBuster.manager.Repositorios
         {
             using (IDbConnection db = new SqlConnection(_connectionString))
             {
-                Usuario usuarios = db.Query<Usuario>("SELECT * FROM Usuario WHERE googleIdentificador = '" + googleSubject.ToString() + "'").FirstOrDefault();
+                Usuario usuarios = db.Query<Usuario>(@"SELECT usuario_id AS UsuarioId, nombre, fecha_alta, activo, identificacion_id, googleIdentificador 
+                                                    FROM Usuario
+                                                    WHERE googleIdentificador = '" + googleSubject.ToString() + "'").FirstOrDefault();
                 return usuarios;
             }
         }

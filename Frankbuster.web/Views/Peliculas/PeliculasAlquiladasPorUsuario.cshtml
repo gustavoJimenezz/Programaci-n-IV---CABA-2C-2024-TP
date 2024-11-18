@@ -1,0 +1,48 @@
+﻿@model IEnumerable<BlockBuster.manager.ModelFactories.PeliculaCompleta>
+
+@{
+    ViewData["Title"] = "PeliculasAlquiladasPorUsuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Peliculas Alquiladas</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.pelicula_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.titulo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.fecha_publicacion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.pelicula_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.titulo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.fecha_publicacion)
+            </td>
+            <td>
+                    @Html.ActionLink("Devolver", "Devolver", new { id=item.pelicula_id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

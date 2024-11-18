@@ -21,21 +21,22 @@ namespace BlockBuster.manager.Repositorios
 
         IEnumerable<Pelicula> GetPeliculasTitulo(string Titulo);
         IEnumerable<PeliculaCompleta> GetPeliculaCompleta();
+        IEnumerable<PeliculaCompleta> GetPeliculaAlquiladaPorUsuario(int usuario_id);
         int CrearPelicula(Pelicula pelicula);
         bool ModificarPelicula(int pelicula_id, Pelicula pelicula);
         bool EliminarPelicula(int pelicula_id);
         bool AlquilarPelicula(int pelicula_id);
         bool MostrarPeliculaAlquiladaPorGoogle(decimal googleIdentificator);
-
-
+        IEnumerable<PeliculaCompleta> GetPeliculasDisponibles();
+        bool DevolverPelicula(int pelicula_id);
     }
 
-    public class ContainerRepository : IPeliculaRepository
+    public class PeliculasRepository : IPeliculaRepository
     {
 
         private string _connectionString;
 
-        public ContainerRepository(string connectionString)
+        public PeliculasRepository(string connectionString)
         {
             _connectionString = connectionString;
 
@@ -65,7 +66,6 @@ namespace BlockBuster.manager.Repositorios
 
         }
 
-
         ///<summary>
         /// Consulta a la DDBB por la lista de Usuario
         /// </summary>
@@ -85,6 +85,30 @@ namespace BlockBuster.manager.Repositorios
             }
         }
 
+        public IEnumerable<PeliculaCompleta> GetPeliculaAlquiladaPorUsuario(int usuario_id)
+        {
+            using (IDbConnection conn = new SqlConnection(_connectionString))
+            {
+                string query = @"
+                        SELECT DISTINCT 
+                            p.pelicula_id,
+                            CAST(p.titulo AS VARCHAR(MAX)) AS titulo, 
+                            CAST(p.descripcion AS VARCHAR(MAX)) AS descripcion, 
+                            p.fecha_publicacion
+                        FROM 
+                            peliculas p
+                        JOIN 
+                            registro_actividades r 
+                        ON 
+                            p.pelicula_id = r.pelicula_id
+                        WHERE 
+                            p.peliculaAlquilada = 1 
+                            AND r.usuario_id = @UsuarioId;";
+
+                return conn.Query<PeliculaCompleta>(query, new { UsuarioId = usuario_id });
+            }
+        }
+
         /// <summary>
         /// Obtiene una lista completa de los usuarios
         /// </summary>
@@ -96,12 +120,9 @@ namespace BlockBuster.manager.Repositorios
             using (IDbConnection conn = new SqlConnection(_connectionString))
             {
 
-                string query = @"SELECT Peliculas-*,
-
-                                  ";
-
-
-
+                //string query = @"SELECT Peliculas-*,
+                //                  ";
+                string query = @"select * from peliculas where peliculaAlquilada = 0";
                 IEnumerable<PeliculaCompleta> results = conn.Query<PeliculaCompleta>(query);
 
                 return results;
@@ -109,11 +130,6 @@ namespace BlockBuster.manager.Repositorios
              }
 
         }
-
-
-  
-
-
 
         /// <summary>
         /// Crear un nuevo Usuario en la base de datos
@@ -136,7 +152,6 @@ namespace BlockBuster.manager.Repositorios
                 return peliculaId;
             }
         }
-
 
         /// <summary>
         /// Modificar Usuario en la base de Datos
@@ -167,7 +182,6 @@ namespace BlockBuster.manager.Repositorios
                 return conn.Execute(query, pelicula) == 1;
             }
         }
-
         public bool AlquilarPelicula(int pelicula_id)
         {
             using (IDbConnection conn = new SqlConnection(_connectionString))
@@ -187,6 +201,25 @@ namespace BlockBuster.manager.Repositorios
                 
             }
         }
+        public bool DevolverPelicula(int pelicula_id)
+        {
+            using (IDbConnection conn = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    string query = @"UPDATE peliculas 
+                                    SET peliculaAlquilada = 0 
+                                    WHERE pelicula_id = " + pelicula_id.ToString();
+
+                    return conn.Execute(query) == 1;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+        }
 
         public bool MostrarPeliculaAlquiladaPorGoogle(decimal googleIdentificator)
         {
@@ -197,14 +230,12 @@ namespace BlockBuster.manager.Repositorios
             }
 
         }
-        
 
         /// <summary>
         /// Eliminar de manera lógica un usuario de la base de datos
         /// </summary>
         /// <param name="pelicula_id">Id del usuario que sera dado de baja</param
         /// <returns></returns>
-
 
         //FALTA CAMPO FechaBaja EN LA TABLA USUARIOS 
         public bool EliminarPelicula(int pelicula_id)
@@ -233,15 +264,25 @@ namespace BlockBuster.manager.Repositorios
             using (IDbConnection conn = new SqlConnection(_connectionString))
             {
 
-                string query = @"SELECT * FROM 
-                                      peliculas";
+                string query = @"select * from peliculas";
                 IEnumerable<PeliculaCompleta> results = conn.Query<PeliculaCompleta>(query);
                 return results;
             }
-            
-                               
-
+                  
                throw new NotImplementedException();
+        }
+
+        public IEnumerable<PeliculaCompleta> GetPeliculasDisponibles()
+        {
+            using (IDbConnection conn = new SqlConnection(_connectionString))
+            {
+
+                string query = @"select * from peliculas where peliculaAlquilada = 0";
+                IEnumerable<PeliculaCompleta> results = conn.Query<PeliculaCompleta>(query);
+                return results;
+            }
+
+            throw new NotImplementedException();
         }
 
         public bool EliminarPelicula(string titulo)

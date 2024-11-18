@@ -1,4 +1,6 @@
-﻿@{
+﻿@using System.Security.Claims
+
+@{
     ViewData["Title"] = "Home Page";
 }
 <br/>
@@ -6,8 +8,10 @@
 {
     <br />
     <h3>Welcome @User.Identity.Name</h3>
+    <h3>Welcome @Context.User.FindFirstValue(ClaimTypes.NameIdentifier)</h3>
     <br/>
     <a asp-controller="Login" asp-action="Logout">Logout</a>
+
 }
 <div class="text-center">
     <h1 class="display-4">Bienvenido a FrankBuster</h1>

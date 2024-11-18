@@ -19,14 +19,16 @@ builder.Services.AddAuthentication(Options =>
     Options.Events.OnCreatingTicket = ctx =>
     {
         var usuarioServicio = ctx.HttpContext.RequestServices.GetRequiredService<IUsuarioRepository>();
-        //posible null
         string googleNameIdentifier = ctx.Identity.Claims.First(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value.ToString(); ;
         var usuario = usuarioServicio.GetUsuarioPorGoogleSubject(googleNameIdentifier);
+        
         int idUsuario = 0;
+        //string nombre = "";
 
         if (usuario == null)
         {
             Usuario usuarioNuevo = new Usuario();
+
 
             usuarioNuevo.Nombre = ctx.Identity.Claims.First(x => x.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname").Value.ToString();
             usuarioNuevo.GoogleIdentificador = googleNameIdentifier;
@@ -36,7 +38,6 @@ builder.Services.AddAuthentication(Options =>
 
             idUsuario = usuarioServicio.CrearUsuario(usuarioNuevo);
 
-            //consulta para roles
             string rolUsuario = usuarioServicio.ObtenerRol(idUsuario);
 
         }
@@ -44,12 +45,16 @@ builder.Services.AddAuthentication(Options =>
         {
             idUsuario = usuario.UsuarioId;
         }
-
-        //ctx.Identity.
-        //   usuarioServicio.GetUsuarioPorGoogleSubject(ctx.Identity.Claims)
-        // Agregar reclamaciones personalizadas aquí
+        if (usuario.Nombre == "elKeko" && usuario.GoogleIdentificador == "109537588717020104832")
+        {
+            ctx.Identity.AddClaim(new System.Security.Claims.Claim("Rol", "Administrador"));
+        }
+        else
+        {
+            idUsuario = usuario.UsuarioId;
+        }
         ctx.Identity.AddClaim(new System.Security.Claims.Claim("idUsuario", idUsuario.ToString()));
-        //posible null
+        ctx.Identity.AddClaim(new System.Security.Claims.Claim("googleNameIdentifier", googleNameIdentifier.ToString()));
         var accessToken = ctx.AccessToken;
         ctx.Identity.AddClaim(new System.Security.Claims.Claim("accessToken", accessToken));
 
@@ -71,8 +76,10 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUsuarioManager, UsuarioManager>();
 builder.Services.AddScoped<IPeliculasManager, PeliculasManager>();
+builder.Services.AddScoped<IRegistroActividadManager, RegistroActividadManager>();
 builder.Services.AddScoped<IUsuarioRepository>(provider => new UsuarioRepository(connectionString));
-builder.Services.AddScoped<IPeliculaRepository>(provider => new ContainerRepository(connectionString));
+builder.Services.AddScoped<IPeliculaRepository>(provider => new PeliculasRepository(connectionString));
+builder.Services.AddScoped<IRegistroActividadRepository>(provider => new RegistroActividadRepository(connectionString));
 
 
 builder.Services.AddScoped<IdentificacionManager>(provider => new IdentificacionManager(miConexion));

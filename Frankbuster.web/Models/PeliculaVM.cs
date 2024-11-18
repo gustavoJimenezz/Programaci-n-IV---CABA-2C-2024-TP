@@ -14,6 +14,7 @@ namespace Frankbuster.web.Models
         public string? titulo { get; set; }
         public string? descripcion { get; set; }
         public string? fecha_publicacion { get; set; }
+        public int peliculaAlquilada { get; set; }
 
     }
 }

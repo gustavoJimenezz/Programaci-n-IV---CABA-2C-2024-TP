@@ -12,10 +12,15 @@ namespace BlockBuster.manager.Manager
     public interface IPeliculasManager
     {
         IEnumerable<PeliculaCompleta> GetPeliculas();
+        IEnumerable<PeliculaCompleta> GetPeliculaAlquiladaPorUsuario(int usuario_id);
         Pelicula GetPelicula(int pelicula_id);
         int CrearPelicula(Pelicula pelicula);
         bool ModificarPelicula(int pelicula_id, Pelicula pelicula);
         bool EliminarPelicula(int pelicula_id);
+        bool AlquilarPelicula(int pelicula_id);
+        bool MostrarPeliculaAlquiladaPorGoogle(decimal googleIdentificator);
+        IEnumerable<PeliculaCompleta> GetPeliculasDisponibles();
+        bool DevolverPelicula(int pelicula_id);
 
     }
     public class PeliculasManager: IPeliculasManager
@@ -39,6 +44,10 @@ namespace BlockBuster.manager.Manager
         {
             return _repo.EliminarPelicula(pelicula_id);
         }
+        public bool DevolverPelicula(int pelicula_id)
+        {
+            return _repo.DevolverPelicula(pelicula_id);
+        }
 
         public Pelicula GetPelicula(int pelicula_id)
         {
@@ -52,6 +61,16 @@ namespace BlockBuster.manager.Manager
             return _repo.GetPeliculaCompleta(); ;
         }
 
+        public IEnumerable<PeliculaCompleta> GetPeliculasDisponibles()
+        {
+            return _repo.GetPeliculasDisponibles(); ;
+        }
+
+        public IEnumerable<PeliculaCompleta> GetPeliculaAlquiladaPorUsuario(int usuario_id)
+        {
+            return _repo.GetPeliculaAlquiladaPorUsuario(usuario_id);
+        }
+
         public bool ModificarPelicula(int pelicula_id, Pelicula pelicula)
         {
             var peliculaEnDb = _repo.GetPelicula(pelicula_id);
@@ -63,6 +82,16 @@ namespace BlockBuster.manager.Manager
             var peli = _repo.ModificarPelicula(pelicula_id, pelicula);
 
             return peli;
+        }
+
+        public bool AlquilarPelicula(int pelicula_id)
+        {
+            return _repo.AlquilarPelicula(pelicula_id);
+        }
+
+        public bool MostrarPeliculaAlquiladaPorGoogle(decimal googleIdentificator)
+        {
+            return _repo.MostrarPeliculaAlquiladaPorGoogle(googleIdentificator);
         }
     }
 }

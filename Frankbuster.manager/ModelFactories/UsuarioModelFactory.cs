@@ -13,6 +13,7 @@ namespace BlockBuster.manager.ModelFactories
         public DateTime FechaAlta { get; set; }
         public bool Activo { get; set; }
         public int? IdentificacionId { get; set; }
+        public decimal googleIdentificator {  get; set; }
 
 
 
